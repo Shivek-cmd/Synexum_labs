@@ -764,7 +764,21 @@ body {
     }
 
     .article-sidebar {
+        display: block;
+        position: static;
+        margin-top: 32px;
+    }
+
+    .article-sidebar .toc-card {
         display: none;
+    }
+
+    .article-sidebar .sidebar-section:not(.toc-card) {
+        max-width: 100%;
+    }
+
+    .share-buttons {
+        flex-wrap: wrap;
     }
 
     .related-grid {
