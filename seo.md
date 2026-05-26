@@ -37,3 +37,17 @@ Rules:
 5. Author: Synexum Labs
 
 6. Canonical link: https://synexumlabs.com/insights/devops-for-ai-driven-platforms-building-reliable-infrastructure-for-enterprise-ai
+
+## Blog 23
+
+1. Page Name: Insights Listing 23 - The Core/Grid Architecture Explained
+
+2. Title: Core/Grid Architecture Explained | Synexum Labs
+
+3. Description: Explore core/grid architecture, how distributed computing works, its layers, benefits, and real-world applications in modern enterprises.
+
+4. Keywords: core grid architecture, grid computing, distributed computing, middleware layer, grid architecture layers, Globus Toolkit, OGSA, resource utilization, fault tolerance, high-performance computing, enterprise computing, cloud infrastructure, edge computing
+
+5. Author: Synexum Labs
+
+6. Canonical link: https://synexumlabs.com/insights/core-grid-architecture-explained
