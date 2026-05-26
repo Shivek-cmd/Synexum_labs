@@ -51,3 +51,17 @@ Rules:
 5. Author: Synexum Labs
 
 6. Canonical link: https://synexumlabs.com/insights/core-grid-architecture-explained
+
+## Blog 24
+
+1. Page Name: Insights Listing 24 - Continuous Improvement as an Engineering Discipline
+
+2. Title: Continuous Improvement as an Engineering Discipline | Synexum Labs
+
+3. Description: Discover how continuous improvement evolved into an engineering discipline that drives operational efficiency, process reliability, and measurable business growth.
+
+4. Keywords: continuous improvement, engineering discipline, operational excellence, process improvement, Six Sigma, Lean methodology, Kaizen, PDCA, waste elimination, process measurement, standardization, root cause analysis, business efficiency, DevOps improvement
+
+5. Author: Synexum Labs
+
+6. Canonical link: https://synexumlabs.com/insights/continuous-improvement-engineering-discipline
