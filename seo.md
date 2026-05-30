@@ -65,3 +65,17 @@ Rules:
 5. Author: Synexum Labs
 
 6. Canonical link: https://synexumlabs.com/insights/continuous-improvement-engineering-discipline
+
+## Blog 25
+
+1. Page Name: Insights Listing 25 - The Modular Enterprise: Defining Core and Grid Operating Models
+
+2. Title: Modular Enterprise: Core and Grid Operating Models | Synexum Labs
+
+3. Description: Explore how Core and Grid operating models help modular enterprises improve agility, governance, scalability, and AI-driven transformation.
+
+4. Keywords: modular enterprise, core operating model, grid operating model, composable enterprise, enterprise architecture, distributed execution, centralized governance, AI transformation, modular business capabilities, enterprise agility, operational scalability, MIT CISR, Gartner composable architecture, business transformation
+
+5. Author: Synexum Labs
+
+6. Canonical link: https://synexumlabs.com/insights/modular-enterprise-core-grid-operating-models
