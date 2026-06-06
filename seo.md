@@ -93,3 +93,17 @@ Rules:
 5. Author: Synexum Labs
 
 6. Canonical link: https://synexumlabs.com/insights/cost-fragmented-tooling-enterprise
+
+## Blog 27
+
+1. Page Name: Insights Listing 27 - How AI Systems Should Observe, Decide, and Act
+
+2. Title: How AI Systems Should Observe, Decide, and Act | Synexum Labs
+
+3. Description: Discover how AI systems observe, decide, and act to drive smarter automation, governed decision-making, and measurable business outcomes.
+
+4. Keywords: agentic AI, observe decide act, OODA loop, AI governance, AI automation, AI agents, enterprise AI, AI decision-making, autonomous AI, AI action framework, AI audit trail, AI explainability, Gartner AI agents, Deloitte agentic AI, AI operational control
+
+5. Author: Synexum Labs
+
+6. Canonical link: https://synexumlabs.com/insights/how-ai-systems-observe-decide-act
