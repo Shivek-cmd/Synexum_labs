@@ -2,6 +2,9 @@
   "permissions": {
     "additionalDirectories": [
       "d:\\HPA\\Synexum_labs"
+    ],
+    "allow": [
+      "Bash(mkdir \"d:/HPA/Synexum_labs/Blog-26\")"
     ]
   }
 }
