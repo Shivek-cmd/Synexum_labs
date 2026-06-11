@@ -107,3 +107,17 @@ Rules:
 5. Author: Synexum Labs
 
 6. Canonical link: https://synexumlabs.com/insights/how-ai-systems-observe-decide-act
+
+## Blog 28
+
+1. Page Name: Insights Listing 28 - Engineering Systems That Survive Production
+
+2. Title: Engineering Systems That Survive Production | Synexum Labs
+
+3. Description: Learn how to engineer systems that survive production with reliability, observability, resilience, and governance practices that reduce outages and improve performance.
+
+4. Keywords: production engineering, site reliability engineering, SRE, observability, distributed systems, resilience patterns, circuit breaker, operational governance, incident response, system reliability, DevOps, monitoring, distributed tracing, production outages, failover, Google SRE, IBM reliability
+
+5. Author: Synexum Labs
+
+6. Canonical link: https://synexumlabs.com/insights/engineering-systems-that-survive-production
