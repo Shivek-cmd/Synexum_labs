@@ -1,0 +1,694 @@
+     <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+
+    <style>
+    /* ========================================
+    HEADER
+    ======================================== */
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: var(--syn-navy-darkest);
+        backdrop-filter: blur(12px);
+
+    }
+
+    .header-nav {
+        height: 72px;
+    }
+
+    @media (min-width: 768px) {
+        .header-nav {
+            height: 96px;
+        }
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+    .logo-container { display: flex; align-items: center; height: 100%; }
+    .logo-image { height: auto; max-height: 70px; /* adjust as needed */ }
+    /* Logo */
+
+    @media (max-width: 768px) {
+        .logo-image {
+            height: 65px;
+        }
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background-color: var(--syn-navy);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-icon svg {
+        width: 20px;
+        height: 20px;
+        color: #FFFFFF;
+    }
+
+    .logo-text {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--syn-text);
+    }
+
+    /* Navigation Links */
+    .nav-links {
+        display: none;
+        align-items: center;
+        gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+        .nav-links {
+            display: flex;
+        }
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--background);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        padding: 8px 0;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--syn-muted);
+    }
+
+    /* Dropdown */
+    .nav-dropdown {
+        position: relative;
+    }
+
+    .dropdown-trigger {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--background);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px 0;
+        transition: color 0.2s ease;
+    }
+
+    .dropdown-trigger:hover {
+        color: var(--syn-muted);
+    }
+
+    .dropdown-trigger .chevron {
+        transition: transform 0.2s ease;
+    }
+
+    .nav-dropdown:hover .chevron {
+        transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding-top: 8px;
+        width: 288px;
+        display: none;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu > div:first-child,
+    .dropdown-menu > a:first-of-type {
+        border-radius: 12px 12px 0 0;
+    }
+
+    .dropdown-menu {
+        background: var(--syn-navy-deep);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(11, 42, 91, 0.12);
+        padding: 8px 0;
+    }
+
+    .dropdown-item {
+        display: block;
+        padding: 12px 16px;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--card-bg);
+    }
+
+    .dropdown-item-title {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--background);
+    }
+
+    .dropdown-item-desc {
+        display: block;
+        font-size: 0.75rem;
+        color: var(--syn-muted);
+        margin-top: 2px;
+    }
+
+    .dropdown-divider {
+        height: 1px;
+        background-color: var(--syn-muted);
+        margin: 8px 0;
+    }
+
+    .dropdown-view-all {
+        display: block;
+        padding: 8px 16px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--syn-cyan);
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .dropdown-view-all:hover {
+        background-color: var(--card-bg);
+    }
+
+    /* Header CTA */
+    .header-cta {
+        display: none;
+        align-items: center;
+        gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+        .header-cta {
+            display: flex;
+        }
+    }
+
+    .btn-cta {
+        display: inline-flex;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: var(--syn-cyan);
+        color: #FFFFFF;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        box-shadow: 0 0 20px rgba(53, 209, 255, 0.2);
+    }
+
+    /* ========================================
+    LANGUAGE SWITCHER - DESKTOP
+    ======================================== */
+    .lang-switcher {
+        position: relative;
+    }
+
+    .lang-trigger {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        background: transparent;
+        border: 1px solid var(--syn-cyan);
+        border-radius: 24px;
+        color: var(--background);
+        font-size: 0.875rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .lang-trigger:hover {
+        background: rgba(53, 209, 255, 0.08);
+    }
+
+    .lang-trigger .globe-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+    }
+
+    .lang-trigger .lang-chevron {
+        width: 14px;
+        height: 14px;
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+    }
+
+    .lang-switcher.open .lang-chevron {
+        transform: rotate(180deg);
+    }
+
+    .lang-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        min-width: 160px;
+        background: var(--syn-navy-deep);
+        border: 1px solid var(--syn-cyan);
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        padding: 6px 0;
+        display: none;
+        z-index: 100;
+    }
+
+    .lang-switcher.open .lang-dropdown {
+        display: block;
+    }
+
+    .lang-option {
+        display: block;
+        width: 100%;
+        padding: 10px 16px;
+        background: none;
+        border: none;
+        color: var(--background);
+        font-size: 0.9rem;
+        font-weight: 400;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .lang-option:hover {
+        background: rgba(53, 209, 255, 0.1);
+    }
+
+    .lang-option.active {
+        color: var(--syn-cyan);
+        font-weight: 500;
+    }
+      .lang-trigger:hover {
+    color: var(--syn-cyan);
+}
+
+.lang-trigger:hover svg {
+    stroke: var(--syn-cyan);
+}
+
+    /* ========================================
+    LANGUAGE SWITCHER - MOBILE
+    ======================================== */
+    .mobile-lang-switcher {
+        display: flex;
+        gap: 8px;
+        padding: 0 8px 16px;
+    }
+
+    .mobile-lang-btn {
+        flex: 1;
+        padding: 10px 8px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--syn-muted);
+        font-size: 0.8rem;
+        font-weight: 500;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-lang-btn:hover {
+        background: rgba(53, 209, 255, 0.1);
+        border-color: rgba(53, 209, 255, 0.3);
+    }
+
+    .mobile-lang-btn.active {
+        background: var(--syn-cyan);
+        border-color: var(--syn-cyan);
+        color: #FFFFFF;
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--background);
+    }
+
+    .mobile-menu-btn:hover {
+        color: var(--syn-muted);
+    }
+
+    .mobile-menu-btn .close-icon {
+        display: none;
+    }
+
+    .mobile-menu-btn.active .menu-icon {
+        display: none;
+    }
+
+    .mobile-menu-btn.active .close-icon {
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        .mobile-menu-btn {
+            display: none;
+        }
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+        display: none;
+        background-color: var(--syn-navy-deep);
+        border-bottom: 1px solid var(--syn-border);
+        padding: 16px 0;
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
+    @media (min-width: 768px) {
+        .mobile-menu {
+            display: none !important;
+        }
+    }
+
+    .mobile-section {
+        padding: 8px 0;
+    }
+
+    .mobile-section-title {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--background);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 0 8px;
+        margin-bottom: 8px;
+    }
+
+    .mobile-link {
+        display: block;
+        padding: 8px;
+        font-size: 0.875rem;
+        color: var(--syn-muted);
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-link:hover {
+        background-color: var(--card-bg);
+    }
+
+    .mobile-view-all {
+        color: var(--syn-cyan);
+        font-weight: 500;
+    }
+
+    .mobile-divider {
+        height: 1px;
+        background-color: var(--syn-border);
+        margin: 8px 0;
+    }
+
+    .mobile-cta {
+        padding-top: 16px;
+        margin-top: 8px;
+        border-top: 1px solid var(--syn-border);
+    }
+
+    .btn-cta.full-width {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ============= BUTTONS ============= */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: var(--radius);
+        padding: 14px 28px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        border: none;
+    }
+
+    .btn-hero {
+        background: var(--syn-cyan);
+        color: var(--syn-navy-deep);
+        box-shadow: 0 0 20px rgba(53, 209, 255, 0.3);
+    }
+
+    .btn-hero:hover {
+        box-shadow: 0 0 30px rgba(53, 209, 255, 0.5);
+    }
+
+    .btn-hero-outline {
+        background: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.2s ease;
+    }
+
+    .btn-hero-outline:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: var(--syn-cyan);
+        box-shadow: 0 0 0 1px var(--syn-cyan);
+    }
+
+    .btn-outline {
+        background: transparent;
+        color: var(--syn-navy);
+        border: 1px solid var(--syn-border);
+    }
+
+    .btn-outline:hover {
+        background-color: var(--syn-navy);
+        color: #FFFFFF;
+    }
+
+    .btn-outline-light {
+        background: transparent;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline-light:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: var(--syn-cyan);
+    }
+
+    .btn-primary-full {
+        width: 100%;
+        background: var(--syn-navy);
+        color: white;
+    }
+
+    .btn-primary-full:hover {
+        background: var(--syn-navy-deep);
+    }
+    </style>
+    </head>
+
+    <body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="site-header">
+    <nav class="header-nav">
+        <div class="container header-container">
+
+    <div class="logo-container">
+        <a href="https://synexumlabs.com/" class="logo" aria-label="Synexum Labs - Home">
+            <img src="https://storage.googleapis.com/msgsndr/DA7rUUUOdvTBCT4N8XMG/media/6983440d212dfc18e2bb2780.png"
+                alt="Synexum Labs Logo"
+                class="logo-image"/>
+        </a>
+    </div>
+
+        <div class="nav-links">
+            <div class="nav-dropdown">
+            <button class="nav-link dropdown-trigger">
+                Capabilities
+                <svg class="chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="dropdown-menu">
+                            <a href="/capabilities/governed-delivery-model" class="dropdown-item"><span class="dropdown-item-title">Governed Delivery Model</span><span class="dropdown-item-desc">Unified delivery governance</span></a>
+                <a href="/capabilities/living-system-architecture" class="dropdown-item"><span class="dropdown-item-title">Living System Architecture</span><span class="dropdown-item-desc">Adaptive connected intelligence</span></a>
+                    <a href="/capabilities/scalable-platform-engineering" class="dropdown-item"><span class="dropdown-item-title">Scalable Platform Engineering</span><span class="dropdown-item-desc">Full-stack AI platforms</span></a>
+    <a href="/capabilities/modular-cell-development" class="dropdown-item">
+    <span class="dropdown-item-title">Modular Cell Development</span>
+    <span class="dropdown-item-desc">Autonomous governed units</span>
+    </a>
+
+    <!--
+
+
+    <a href="/capabilities/data-reporting" class="dropdown-item">
+    <span class="dropdown-item-title">Data & Reporting</span>
+    <span class="dropdown-item-desc">Analytics & business intelligence</span>
+    </a>
+
+    <a href="/capabilities/managed-execution" class="dropdown-item">
+    <span class="dropdown-item-title">Managed Execution</span>
+    <span class="dropdown-item-desc">Ongoing operations support</span>
+    </a>
+    -->
+
+                <div class="dropdown-divider"></div>
+                <a href="/capabilities" class="dropdown-view-all">View All Capabilities &rarr;</a>
+            </div>
+            </div>
+
+            <a href="/case-studies" class="nav-link">Case Studies</a>
+            <a href="/how-we-work" class="nav-link">How We Work</a>
+            <a href="/insights" class="nav-link">Insights</a>
+            <a href="/about-us" class="nav-link">About</a>
+        </div>
+
+        <div class="header-cta">
+            <!-- Language Switcher (Desktop) -->
+            <div class="lang-switcher" id="langSwitcher">
+            <button class="lang-trigger" id="langTrigger" aria-label="Select language">
+                <svg class="globe-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span id="currentLangLabel" data-no-translate>Language</span>
+                <svg class="lang-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="lang-dropdown">
+                <button class="lang-option active" id="langEN" onclick="setLanguage('en')">English</button>
+                <button class="lang-option" id="langFR" onclick="setLanguage('fr')">Fran&ccedil;ais</button>
+                <button class="lang-option" id="langES" onclick="setLanguage('es')">Espa&ntilde;ol</button>
+            </div>
+            </div>
+
+            <a href="/book-discovery-call" class="btn-cta">Book Discovery Call</a>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+            <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+
+        </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+    <div class="container">
+
+        <!-- Language Switcher (Mobile) -->
+        <div class="mobile-lang-switcher">
+        <button class="mobile-lang-btn active" id="mobileLangEN" onclick="setLanguage('en')">English</button>
+        <button class="mobile-lang-btn" id="mobileLangFR" onclick="setLanguage('fr')">Fran&ccedil;ais</button>
+        <button class="mobile-lang-btn" id="mobileLangES" onclick="setLanguage('es')">Espa&ntilde;ol</button>
+        </div>
+
+        <div class="mobile-divider"></div>
+
+        <div class="mobile-section">
+        <span class="mobile-section-title">Capabilities</span>
+        <a href="/capabilities/governed-delivery-model" class="mobile-link">Governed Delivery Model</a>
+        <a href="/capabilities/living-system-architecture" class="mobile-link">Living Systems Architecture</a>
+        <a href="/capabilities/scalable-platform-engineering" class="mobile-link">Scalable Platform Engineering</a>
+            <a href="/capabilities/modular-cell-development" class="mobile-link">Modular Cell Development</a>
+    <!--
+    <a href="/capabilities/data-reporting" class="mobile-link">Data & Reporting</a>
+    <a href="/capabilities/managed-execution" class="mobile-link">Managed Execution</a>
+    -->
+
+        <a href="/capabilities" class="mobile-link mobile-view-all">View All Capabilities &rarr;</a>
+        </div>
+
+        <div class="mobile-divider"></div>
+
+        <a href="/case-studies" class="mobile-link">Case Studies</a>
+        <a href="/how-we-work" class="mobile-link">How We Work</a>
+        <a href="/insights" class="mobile-link">Insights</a>
+        <a href="/about-us" class="mobile-link">About</a>
+
+        <div class="mobile-cta">
+        <a href="/book-discovery-call" class="btn-cta full-width">Book Discovery Call</a>
+        </div>
+    </div>
+    </div>
+
+    </header>
+
+    <script>
+    // Desktop language dropdown toggle
+    const langSwitcher = document.getElementById('langSwitcher');
+    const langTrigger = document.getElementById('langTrigger');
+
+    if (langTrigger) {
+        langTrigger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        langSwitcher.classList.toggle('open');
+        });
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+        if (langSwitcher && !langSwitcher.contains(e.target)) {
+        langSwitcher.classList.remove('open');
+        }
+    });
+
+    // Close dropdown after selecting a language
+    document.querySelectorAll('.lang-option').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+        langSwitcher.classList.remove('open');
+        });
+    });
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', function () {
+        mobileMenuBtn.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+    });
+}
+      document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+    });
+});
+    </script>
+
+    </body>
+    </html>

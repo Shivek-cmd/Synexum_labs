@@ -1,0 +1,419 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Footer</title>
+
+<style>
+/* ========================================
+   FOOTER
+   ======================================== */
+.site-footer {
+    background-color: var(--syn-navy-darkest);
+    padding: 64px 0;
+}
+
+.footer-brand {
+    margin-bottom: 28px;
+/* clean, proportional spacing */
+}
+.footer-logo {
+height: 70px;
+    width: auto;
+    display: block;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+
+}
+
+/* Footer Brand */
+.footer-brand {
+    grid-column: span 2;
+}
+
+@media (min-width: 768px) {
+    .footer-brand {
+        grid-column: span 1;
+    }
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    margin-bottom: 16px;
+}
+
+.footer-logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: rgba(53, 209, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-logo-icon svg {
+    width: 20px;
+    height: 20px;
+    color: var(--syn-cyan);
+}
+
+.footer-logo span {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.footer-tagline {
+    font-size: 0.875rem;
+    color: #EAF2FF;
+    max-width: 280px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  white-space: nowrap;
+}
+
+.footer-tagline-small {
+    font-size: 0.75rem;
+    color: #A9B7D0;
+    max-width: 280px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+   white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .footer-tagline,
+  .footer-tagline-small {
+    white-space: normal;
+  }
+}
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--syn-cyan);
+}
+
+/* Newsletter */
+.newsletter h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+  .newsletter-iframe-wrap {
+  max-width: 300px;   /* 👈 control width HERE */
+  margin: 0 0;
+
+}
+
+.newsletter-iframe-wrap iframe {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  display: block; /* removes inline iframe gap */
+  overflow:hidden;
+}
+
+
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+  overflow:hidden;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 10px 14px;
+    font-size: 0.875rem;
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--syn-cyan);
+}
+
+.newsletter-form button {
+    padding: 10px 14px;
+    background-color: var(--syn-cyan);
+    color: var(--syn-navy-deep);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    opacity: 0.9;
+}
+
+/* Footer Columns */
+.footer-column h4 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: var(--syn-cyan);
+}
+
+/* Footer Separator */
+.footer-separator {
+    height: 1px;
+    background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(226, 232, 240, 0.2) 10%,
+    rgba(53, 209, 255, 0.3) 50%,
+    rgba(226, 232, 240, 0.2) 90%,
+    transparent 100%
+  );
+    margin-bottom: 32px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.copyright {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.legal-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.legal-links a {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legal-links a:hover {
+    color: var(--syn-cyan);
+}
+
+.coigne-link {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .coigne-link {
+        display: inline;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-carousel {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-ctas {
+        flex-direction: column;
+    }
+
+    .hero-ctas .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href="https://synexumlabs.com/" class="footer-logo" aria-label="Synexum Labs - Home">
+          <img
+            src="https://storage.googleapis.com/msgsndr/DA7rUUUOdvTBCT4N8XMG/media/6983440d212dfc18e2bb2780.png"
+            alt="Synexum Labs Logo"
+            class="footer-logo"
+          />
+        </a>
+
+        <p class="footer-tagline">Digital Transformations • Software • AI • Automation</p>
+        <p class="footer-tagline-small">Synexum Labs is a sub-brand of Coigne Capital Inc.</p>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/synexum-labs/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+           <!-- Facebook -->
+  <a href="https://www.facebook.com/profile.php?id=61587085808708" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+  </a>
+          <!-- Instagram -->
+<a href="https://www.instagram.com/synexumlabs/"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Instagram">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="16"
+       height="16"
+       viewBox="0 0 24 24"
+       fill="none"
+       stroke="currentColor"
+       stroke-width="2"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+  </svg>
+</a>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="newsletter">
+          <h4>Subscribe to Insights</h4>
+          <div class="newsletter-iframe-wrap">
+    <iframe
+      src="https://link.mybusinessautomated.com/widget/form/mGpdFCU5OS4sruoFN1S0"
+ style="border:none;"
+
+      id="inline-mGpdFCU5OS4sruoFN1S0"
+      title="Newsletter Signup"
+            scrolling="no">
+    </iframe>
+  </div>
+        </div>
+      </div>
+
+      <!-- Capabilities Column -->
+      <div class="footer-column">
+        <h4>Capabilities</h4>
+        <ul>
+          <li><a href="/capabilities/governed-delivery-model" >Governed Delivery Model</a></li>
+          <li><a href="/capabilities/living-system-architecture" >Living System Architecture</a></li>
+          <li><a href="/capabilities/scalable-platform-engineering">Scalable Platform Engineering</a></li>
+          <li><a href="/capabilities/modular-cell-development">Modular Cell Development</a></li>
+
+          <li><a href="/capabilities/institutional-grade-sustainment">Institutional-Grade Sustainment</a></li>
+        </ul>
+      </div>
+
+      <!-- Company Column -->
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about-us" >About</a></li>
+          <li><a href="/case-studies" >Case Studies</a></li>
+          <li><a href="/insights" >Insights</a></li>
+          <li><a href="/contact-us" >Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/capability-brief">Capability Brief</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-separator"></div>
+
+    <div class="footer-bottom">
+      <div class="copyright">©  Coigne Capital Inc. — Synexum Labs</div>
+      <div class="legal-links">
+        <a href="/privacy-policy" >Privacy Policy</a>
+        <a href="/terms-of-service">Terms of Service</a>
+        <a href="/legal-disclaimer">Legal Disclaimer</a>
+        <a href="https://coignecapital.ca" target="_blank" rel="noopener noreferrer" class="coigne-link">A Coigne Capital company</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
