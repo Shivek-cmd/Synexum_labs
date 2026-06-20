@@ -57,7 +57,7 @@
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 0px;
+    padding: 0 24px;
 }
 
 @media (max-width: 1250px) {
@@ -81,6 +81,7 @@
 
 html {
     scroll-behavior: smooth;
+     overflow-x: hidden;
 }
 
 body {
@@ -89,6 +90,7 @@ body {
     color: var(--foreground);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+     overflow-x: hidden;
 }
 
 
@@ -160,7 +162,10 @@ body {
 }
 
 .blog-image {
-    max-width: 850px;
+    /* max-width: 850px; */
+     max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 @media (max-width: 1250px) {
