@@ -549,3 +549,17 @@ Canonical Link:
 5. Author: Synexum Labs
 
 6. Canonical Link: https://synexumlabs.com/insights/designing-domain-cells-finance-operations-analytics
+
+## Blog 47
+
+1. Page Name: Insights Listing 47 - Engineering Resilience Into Enterprise Systems
+
+2. Title: Engineering Resilience Into Enterprise Systems | Synexum Labs
+
+3. Description: Learn how resilient enterprise systems combine automation, integration monitoring, and human control to keep operating when things go wrong.
+
+4. Keywords: enterprise resilience, resilient systems, operational resilience, integration monitoring, data lineage, observability, automation governance, exception handling, system reliability, incident response, AI governance, business continuity
+
+5. Author: Synexum Labs
+
+6. Canonical Link: https://synexumlabs.com/insights/engineering-resilience-into-enterprise-systems
